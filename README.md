@@ -49,15 +49,25 @@ e é totalmente funcional em ambientes locais (VS Code, PyCharm, terminal, etc.)
 ```
 
 projeto/
+
 ├── data/
+
 │   └── helpdesk.csv
+
 ├── output_files/
+
 │   ├── models/
+
 │   └── results/
+
 │       └── folds/
+
 ├── Train.py
+
 ├── evaluate_suffix_and_remaining_time.py
+
 ├── evaluate_next_activity_and_time.py
+
 └── calculate_accuracy_on_next_event.py
 
 ````
@@ -176,7 +186,6 @@ Nos scripts, as principais variáveis que podem ser alteradas são:
 
 **Lyan Eduardo Sakuno Rodrigues**
 Bacharelado em Inteligência Artificial – Universidade Federal de Goiás (UFG)
-📧 [lyanesr@gmail.com](mailto:lyanesr@gmail.com)
 
 ---
 
