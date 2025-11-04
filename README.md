@@ -46,8 +46,6 @@ e é totalmente funcional em ambientes locais (VS Code, PyCharm, terminal, etc.)
 
 ## 📂 Estrutura de pastas recomendada
 
-```
-
 projeto/
 
 ├── data/
