@@ -221,6 +221,7 @@ Bacharelado em Inteligência Artificial – Universidade Federal de Goiás (UFG)
 
 ## 📜 Licença
 
-Esta é uma versão adaptada para fins acadêmicos e de pesquisa do trabalho original de **Ilya Verenich** e **Niek Tax**, com atualização completa para **Python 3** e compatibilidade com **TensorFlow/Keras 2.x**.
+Esta é uma adaptação acadêmica dos códigos de Ilya Verenich e Niek Tax,
+atualizada para Python 3 e complementada com o uso do pm4py para fins de pesquisa e ensino..
 
 ```
