@@ -1,4 +1,3 @@
-```markdown
 # 🧠 Predictive Business Process Monitoring with LSTM (Python 3 Adaptation)
 
 Este repositório é uma versão atualizada do projeto original de **Ilya Verenich** e **Niek Tax**, disponível em  
@@ -87,7 +86,6 @@ projeto/
 
 └── calculate_accuracy_on_next_event.py
 
-````
 ---
 
 # ⚙️ Configuração e execução local
