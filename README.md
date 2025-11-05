@@ -8,7 +8,7 @@ de *Niek Tax, Ilya Verenich, Marcello La Rosa e Marlon Dumas (CAiSE 2017)*.
 
 ---
 
-## 🎓 Contexto acadêmico
+# 🎓 Contexto acadêmico
 
 Este projeto foi desenvolvido como parte do **Trabalho de Conclusão de Curso (TCC)** de  
 **Lyan Eduardo Sakuno Rodrigues**, no curso de **Bacharelado em Inteligência Artificial**  
@@ -19,7 +19,7 @@ para prever eventos futuros e tempos de execução em processos de negócio reai
 
 ---
 
-## ⚙️ Funcionalidades
+# ⚙️ Funcionalidades
 
 A partir do código original, esta versão em **Python 3** permite realizar:
 
@@ -33,18 +33,37 @@ e é totalmente funcional em ambientes locais (VS Code, PyCharm, terminal, etc.)
 
 ---
 
-## 🧩 Estrutura dos scripts
+# ⚙️ Estrutura do repositório
 
-| Script | Função Principal |
-|--------|------------------|
-| `Train.py` | Lê o log de eventos e treina um modelo LSTM para prever próxima atividade e tempo |
-| `evaluate_suffix_and_remaining_time.py` | Avalia o modelo prevendo o sufixo e o tempo restante |
-| `evaluate_next_activity_and_time.py` | Avalia o modelo na previsão da próxima atividade e tempo até ela |
-| `calculate_accuracy_on_next_event.py` | Calcula a acurácia da predição da próxima atividade |
+Este repositório contém **duas versões** do código original:
+
+## 🟢 Versão 1 — Atualizada para Python 3
+Mantém a estrutura lógica original de Niek Tax, apenas corrigindo sintaxe e bibliotecas obsoletas.
+
+| Script | Função principal |
+|---------|------------------|
+| `Train.py` | Treina um modelo LSTM com base em um log CSV |
+| `evaluate_suffix_and_remaining_time.py` | Avalia sufixo e tempo restante |
+| `evaluate_next_activity_and_time.py` | Avalia próxima atividade e tempo |
+| `calculate_accuracy_on_next_event.py` | Calcula acurácia do próximo evento |
 
 ---
 
-## 📂 Estrutura de pastas recomendada
+## 🧩 Versão 2 — Atualizada com o framework **pm4py**
+
+Utiliza o **[pm4py](https://pm4py.fit.fraunhofer.de/)** (Process Mining for Python) para leitura e manipulação do log de eventos, substituindo o parsing manual.  
+Isso torna o código mais robusto, modular e alinhado às práticas modernas de mineração de processos.
+
+| Script | Função principal |
+|---------|------------------|
+| `Train_pm4py.py` | Treina o modelo LSTM com leitura via pm4py |
+| `evaluate_suffix_and_remaining_time_pm4py.py` | Avalia sufixo e tempo restante |
+| `evaluate_next_activity_and_time_pm4py.py` | Avalia próxima atividade e tempo |
+| `calculate_accuracy_on_next_event.py` | Permanece igual, pois lê apenas resultados |
+
+---
+
+# 📂 Estrutura de pastas recomendada
 
 projeto/
 
@@ -69,12 +88,11 @@ projeto/
 └── calculate_accuracy_on_next_event.py
 
 ````
-
 ---
 
-## ⚙️ Configuração e execução local
+# ⚙️ Configuração e execução local
 
-### 🔧 Requisitos
+## 🔧 Requisitos
 
 Certifique-se de ter instalado:
 
@@ -87,7 +105,8 @@ Certifique-se de ter instalado:
 Execute no terminal do VS Code (ou CMD / PowerShell):
 
 ```bash
-pip install numpy keras tensorflow scikit-learn distance jellyfish matplotlib
+Instale os pacotes necessários:
+pip install numpy keras tensorflow scikit-learn distance jellyfish matplotlib pm4py
 ````
 
 ### 🧭 Passos de execução
@@ -151,6 +170,19 @@ Nos scripts, as principais variáveis que podem ser alteradas são:
   2,7,2014-01-03 10:00:00
   ```
 * O arquivo `helpdesk.csv` pode ser substituído por outros datasets (como *BPI Challenge* ou *Sepsis*), bastando ajustar o nome na variável `eventlog`.
+
+---
+🧠 Sobre o uso do pm4py
+
+O framework pm4py é utilizado aqui para:
+
+✅ Ler logs de eventos diretamente como process event logs (com case_id, activity_key, timestamp_key)
+
+✅ Calcular tempos entre eventos e tempos desde o início do caso com precisão
+
+✅ Reduzir código repetitivo e tornar a manipulação de logs mais clara e compatível com outros estudos de Process Mining
+
+As redes neurais LSTM continuam implementadas em Keras / TensorFlow 2.x, preservando o comportamento do artigo original.
 
 ---
 
